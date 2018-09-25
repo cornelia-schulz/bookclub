@@ -1,0 +1,14 @@
+{
+    "appName": "Buchclub",
+    "Books": "Bücher",
+    "languages": {
+        "en": "Englisch",
+        "de": "Deutsch"
+      },
+      "books": {
+        "mobydick": "Moby Dick",
+        "donquixote": "Don Quixote",
+        "warandpeace": "Krieg und Frieden"
+    },
+    "Home": "Start"
+}

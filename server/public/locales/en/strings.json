@@ -1,0 +1,14 @@
+{
+    "appName": "Book Club",
+    "Books": "Books",
+    "languages": {
+        "en": "English",
+        "de": "German"
+      },
+    "books": {
+        "mobydick": "Moby Dick",
+        "donquixote": "Don Quixote",
+        "warandpeace": "War and Peace"
+    },
+    "Home": "Home"
+}
