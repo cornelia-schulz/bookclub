@@ -3,6 +3,7 @@ import { withNamespaces } from 'react-i18next'
 import Header from './Header'
 import Footer from './Footer'
 import Books from './Books'
+import Counter from './Counter'
 
 class App extends React.Component {
   constructor(props) {
@@ -20,6 +21,7 @@ class App extends React.Component {
       <div className="App">
         <Header></Header>
         <Books></Books>
+        <Counter />
         <Footer />
       </div>
     )

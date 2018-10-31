@@ -15,5 +15,8 @@
         "home": "Start",
         "books": "Bücher",
         "language": "Sprache"
+    },
+    "Counter": {
+        "click": "Du hast die Taste {{count}} mal betätigt."
     }
 }

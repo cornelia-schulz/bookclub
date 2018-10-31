@@ -15,5 +15,8 @@
         "home": "Home",
         "books": "Books",
         "language": "Language"
+    },
+    "Counter": {
+        "click": "You clicked the button {{count}} times."
     }
 }
