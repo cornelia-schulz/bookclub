@@ -10,5 +10,10 @@
         "donquixote": "Don Quixote",
         "warandpeace": "Krieg und Frieden"
     },
-    "Home": "Start"
+    "Home": "Start",
+    "Header": {
+        "home": "Start",
+        "books": "Bücher",
+        "language": "Sprache"
+    }
 }

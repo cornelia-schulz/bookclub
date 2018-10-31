@@ -14,7 +14,7 @@
     ]
   },
   "scripts": {
-    "dev": "nodemon server --watch server & webpack --watch",
+    "dev": "node server & webpack --watch",
     "start": "react-scripts start",
     "build": "webpack"
   },
@@ -29,9 +29,9 @@
     "i18next-xhr-backend": "^1.5.1",
     "knex": "^0.14.6",
     "mongoose": "^5.2.17",
-    "react": "^16.4.1",
+    "react": "16.7.0-alpha.0",
     "react-dom": "^16.4.1",
-    "react-i18next": "^7.12.0",
+    "react-i18next": "^8.3.5",
     "react-router-dom": "^4.3.1",
     "sqlite3": "^4.0.2",
     "superagent": "^3.8.3",

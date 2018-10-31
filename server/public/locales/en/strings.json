@@ -10,5 +10,10 @@
         "donquixote": "Don Quixote",
         "warandpeace": "War and Peace"
     },
-    "Home": "Home"
+    "Home": "Home",
+    "Header": {
+        "home": "Home",
+        "books": "Books",
+        "language": "Language"
+    }
 }

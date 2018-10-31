@@ -1,21 +1,16 @@
 import React from 'react'
-import { I18n } from 'react-i18next'
+import i18n from 'i18next'
+import { withNamespaces } from 'react-i18next'
 
-const Header = () => {
+const Header = (props) => {
+    let { t, i18n } = props
     return (
-        <I18n ns="strings">
-        {
-            (t, { i18n }) => (
-                <header className="header">
-                    Header
-                    <button>{t('home')}</button>
-                    <button>{t('books')}</button>
-                    <button>{t('language')}</button>
-                </header>
-            )
-        }
-        </I18n>
+        <header className="header">
+            <button>{t('Header.home')}</button>
+            <button>{t('Header.books')}</button>
+            <button>{t('Header.language')}</button>
+        </header>
     )
 }
 
-export default Header
+export default withNamespaces('strings')(Header)
