@@ -27,3 +27,13 @@ Include i18n in index.js
 # components
 Update components with text to use {t("stringname")}
 
+# interpolation
+```{
+  "click": "You clicked {{count}} times."
+}```
+Sample:
+```
+const count = 0
+i18next.t('click', {count});
+// -> "You clicked 0 times."```
+
