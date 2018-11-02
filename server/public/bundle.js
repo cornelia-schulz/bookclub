@@ -168,9 +168,6 @@ function (_React$Component) {
   }
 
   _createClass(App, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {}
-  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -296,6 +293,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var i18next__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! i18next */ "./node_modules/i18next/dist/es/index.js");
 /* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-i18next */ "./node_modules/react-i18next/dist/es/index.js");
 /* harmony import */ var _UseWindowWidth__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./UseWindowWidth */ "./client/components/UseWindowWidth.jsx");
+/* harmony import */ var _UsePrevious__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./UsePrevious */ "./client/components/UsePrevious.jsx");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -310,6 +308,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 function Counter(props) {
   var t = props.t,
       i18n = props.i18n;
@@ -317,8 +316,14 @@ function Counter(props) {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
       _useState2 = _slicedToArray(_useState, 2),
       count = _useState2[0],
-      setCount = _useState2[1];
+      setCount = _useState2[1]; // // getting previous state
+  // const prevCountRef = useRef()
+  // useEffect(() => {
+  //     prevCountRef.current = count
+  // })
 
+
+  var prevCount = Object(_UsePrevious__WEBPACK_IMPORTED_MODULE_4__["usePrevious"])(count);
   var width = Object(_UseWindowWidth__WEBPACK_IMPORTED_MODULE_3__["useWindowWidth"])();
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "counter"
@@ -326,9 +331,14 @@ function Counter(props) {
     onClick: function onClick() {
       return setCount(count + 1);
     }
-  }, "Click me"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, t('Counter.click', {
+  }, t('Counter.button')), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, t('Counter.click', {
     count: count
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Window width is ", width));
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, t('Counter.previous', {
+    count: count,
+    prevCount: prevCount
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, t('Counter.width', {
+    width: width
+  })));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_i18next__WEBPACK_IMPORTED_MODULE_2__["withNamespaces"])('strings')(Counter));
@@ -383,6 +393,29 @@ var Header = function Header(props) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_i18next__WEBPACK_IMPORTED_MODULE_2__["withNamespaces"])('strings')(Header));
+
+/***/ }),
+
+/***/ "./client/components/UsePrevious.jsx":
+/*!*******************************************!*\
+  !*** ./client/components/UsePrevious.jsx ***!
+  \*******************************************/
+/*! exports provided: usePrevious */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "usePrevious", function() { return usePrevious; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+function usePrevious(value) {
+  var ref = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    ref.current = value;
+  });
+  return ref.current;
+}
 
 /***/ }),
 

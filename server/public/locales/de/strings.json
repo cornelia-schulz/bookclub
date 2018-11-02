@@ -4,8 +4,8 @@
     "languages": {
         "en": "Englisch",
         "de": "Deutsch"
-      },
-      "books": {
+    },
+    "books": {
         "mobydick": "Moby Dick",
         "donquixote": "Don Quixote",
         "warandpeace": "Krieg und Frieden"
@@ -17,6 +17,9 @@
         "language": "Sprache"
     },
     "Counter": {
-        "click": "Du hast die Taste {{count}} mal betätigt."
+        "click": "Du hast die Taste {{count}} mal betätigt.",
+        "button": "Klick mich",
+        "width": "Fensterbreite ist {{width}}.",
+        "previous": "Die derzeitige Anzahl ist: {{count}}, vor dem letzten Klick war sie: {{prevCount}}."
     }
 }

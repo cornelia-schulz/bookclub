@@ -4,7 +4,7 @@
     "languages": {
         "en": "English",
         "de": "German"
-      },
+    },
     "books": {
         "mobydick": "Moby Dick",
         "donquixote": "Don Quixote",
@@ -17,6 +17,9 @@
         "language": "Language"
     },
     "Counter": {
-        "click": "You clicked the button {{count}} times."
+        "click": "You clicked the button {{count}} times.",
+        "button": "Click me",
+        "width": "Window width is {{width}}.",
+        "previous": "The count now is: {{count}} and previously it was: {{prevCount}}."
     }
 }
