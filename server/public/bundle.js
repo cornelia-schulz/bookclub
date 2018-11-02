@@ -197,83 +197,63 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var i18next__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! i18next */ "./node_modules/i18next/dist/es/index.js");
 /* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-i18next */ "./node_modules/react-i18next/dist/es/index.js");
 /* harmony import */ var _apiClient__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../apiClient */ "./client/apiClient.js");
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
 
 
+ // class Books extends React.Component {
+//   constructor(props) {
+//     super(props)
+//     this.state = {
+//       books: []
+//     }
+//   }
+// componentDidMount() {
+//   getAllBooks()
+//     .then(books => {
+//       this.setState({ books })
+//     })
+// }
 
-var Books =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(Books, _React$Component);
+function Books(props) {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
+      _useState2 = _slicedToArray(_useState, 2),
+      books = _useState2[0],
+      setBooks = _useState2[1];
 
-  function Books(props) {
-    var _this;
+  var t = props.t,
+      i18n = props.i18n;
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    Object(_apiClient__WEBPACK_IMPORTED_MODULE_3__["getAllBooks"])().then(function (books) {
+      setBooks(books);
+    });
+  }); // render() {
+  //   let { t, i18n } = this.props
 
-    _classCallCheck(this, Books);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Books).call(this, props));
-    _this.state = {
-      books: []
-    };
-    return _this;
-  }
-
-  _createClass(Books, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      var _this2 = this;
-
-      Object(_apiClient__WEBPACK_IMPORTED_MODULE_3__["getAllBooks"])().then(function (books) {
-        _this2.setState({
-          books: books
-        });
-      });
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "Books"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, t('appName')), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: function onClick() {
+      return i18n.changeLanguage('de');
     }
-  }, {
-    key: "render",
-    value: function render() {
-      var _this$props = this.props,
-          t = _this$props.t,
-          i18n = _this$props.i18n;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "Books"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, t('appName')), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: function onClick() {
-          return i18n.changeLanguage('de');
-        }
-      }, t('languages.de')), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: function onClick() {
-          return i18n.changeLanguage('en');
-        }
-      }, t('languages.en')), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, t('books')), this.state.books && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.state.books.map(function (book) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          key: book.id
-        }, book.title);
-      })));
+  }, t('languages.de')), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: function onClick() {
+      return i18n.changeLanguage('en');
     }
-  }]);
-
-  return Books;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+  }, t('languages.en')), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, t('Books')), books && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, books.map(function (book) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      key: book.id
+    }, book.title);
+  }))); // }
+}
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_i18next__WEBPACK_IMPORTED_MODULE_2__["withNamespaces"])('strings')(Books));
 
@@ -316,12 +296,7 @@ function Counter(props) {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
       _useState2 = _slicedToArray(_useState, 2),
       count = _useState2[0],
-      setCount = _useState2[1]; // // getting previous state
-  // const prevCountRef = useRef()
-  // useEffect(() => {
-  //     prevCountRef.current = count
-  // })
-
+      setCount = _useState2[1];
 
   var prevCount = Object(_UsePrevious__WEBPACK_IMPORTED_MODULE_4__["usePrevious"])(count);
   var width = Object(_UseWindowWidth__WEBPACK_IMPORTED_MODULE_3__["useWindowWidth"])();
@@ -408,6 +383,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "usePrevious", function() { return usePrevious; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+ // this keeps a record of the previous state / prop
 
 function usePrevious(value) {
   var ref = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
@@ -487,6 +463,7 @@ i18next__WEBPACK_IMPORTED_MODULE_0__["default"].use(i18next_xhr_backend__WEBPACK
   interpolation: {
     escapeValue: false
   },
+  returnObjects: true,
   react: {
     wait: true
   }
