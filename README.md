@@ -44,4 +44,8 @@ i18next.t('click', {count});
 
 // -> "You clicked 0 times."
 
+To replace more than just one placeholder with a variable, use:
+
+<p>{t('Counter.previous', {count: count, prevCount: prevCount})}</p>
+
 
