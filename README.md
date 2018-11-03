@@ -1,10 +1,11 @@
-# react.i18next Sample Project
+# react.i18next & React Hooks Sample Project
 
-# yarn
+## i18next
+### yarn
 $ yarn add react-i18next i18next i18next-browser-languagedetector i18next-xhr-backend
 $ yarn add -D @alienfast/i18next-loader
 
-# webpack.config.js
+### webpack.config.js
 add the following to the webpack.config.js file
 
 
@@ -15,19 +16,19 @@ add the following to the webpack.config.js file
       //query: { overrides: [ '../node_modules/lib/locales' ] }
     }
 
-# i18n.js
+### i18n.js
 Create i18n.js file to configure storage of language files and initialise i18next
 
-# strings.json
+### strings.json
 Language files should be stored as json inside the public folder in a folder called locales
 
-# index.json
+### index.json
 Include i18n in index.js
 
-# components
+### components
 Update components with text to use {t("stringname")}
 
-# interpolation
+### interpolation
 
 
     {
@@ -49,3 +50,5 @@ To replace more than just one placeholder with a variable, use:
 <p>{t('Counter.previous', {count: count, prevCount: prevCount})}</p>
 
 
+## React Hooks
+Available since React 16.7.0alpha
