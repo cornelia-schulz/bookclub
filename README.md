@@ -1,5 +1,6 @@
 # react.i18next & React Hooks Sample Project
 
+https://www.cornelia-schulz.net/localisation-With-I18next
 ## i18next
 ### yarn
 $ yarn add react-i18next i18next i18next-browser-languagedetector i18next-xhr-backend
@@ -51,4 +52,4 @@ To replace more than just one placeholder with a variable, use:
 
 
 ## React Hooks
-Available since React 16.7.0alpha
+https://www.cornelia-schulz.net/react-hooks
